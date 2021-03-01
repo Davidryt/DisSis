@@ -1,28 +1,39 @@
-<div style="text-align:center">
-    <h1>
-        Welcome to {{ title }}!
-    </h1>
+<div class="cuerpo">
+    <div style="text-align:center">
+        <h1>
+            COMANDA
+        </h1>
+    </div>
+
+    <br/>
+    <div class="consumicion">
+        <h5 class="consTexto">Consumición:</h5>
+        <select name='lstComidas' [(ngModel)]='comidaSeleccionada'>
+            <option *ngFor='let comida of getComidas()' [value]='comida[0]'>{{comida[0]}} ({{comida[1] | currency:'EUR':'symbol':'1.0-2'}})</option>
+        </select>
+        <button type='button' (click)='addConsumicion()'>+</button>
+    </div>
+    <h3>Consumiciones:</h3>
+    <table>
+        <thead>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor='let consumicion of getConsumiciones().entries()'>
+                <td>{{consumicion[1][0]}}</td>
+                <td>{{consumicion[1][1] | currency:'EUR':'symbol':'1.0-2'}}</td>
+                <td><button type='button' (click)='deleteConsumicion(consumicion[0])'>-</button></td>
+            </tr>
+            <tr>
+                <td><b>TOTAL</b></td>
+                <td>{{getTotal() | currency:'EUR':'symbol':'1.0-2'}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-
-<br/>
-<h2>BOTÓN que añade elementos al MODELO:</h2>
-<select name='lstComidas' [(ngModel)]='comidaSeleccionada'>
-      <option *ngFor='let comida of getComidas()' [value]='comida[0]'>{{comida[0]}}</option>
-  </select>
-<button type='button' (click)='addConsumicion()'>+</button>
-
-<table>
-    <thead>
-        <th>Producto</th>
-        <th>Precio</th>
-    </thead>
-    <tbody>
-        <tr *ngFor='let consumicion of getConsumiciones()'>
-            <td>{{consumicion[0]}}</td>
-            <td>{{consumicion[1]}}</td>
-        </tr>
-    </tbody>
-</table>
 
 <!-- <h2>Pipes</h2>
 <label>Nombre:</label> {{txtApellidos|uppercase}}<br/>

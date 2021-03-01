@@ -14,7 +14,7 @@ export class AppComponent {
   seleccionado: string = "";
   costeTotal = 0;
 
-  public comidas: Array<[string, number]> = [['Ternera con bambú y setas', 7.0], ['Arroz tres delicias', 3.5], ['', 4.4]]
+  public comidas: Array<[string, number]> = [['Ternera con bambú y setas', 7.0], ['Arroz tres delicias', 3.5], ['Pato a la naranja', 14.4]]
 
   public comidaSeleccionada = 'Ternera con bambú y setas';
   public consumiciones: Array<[string, number]> = [];
@@ -31,7 +31,16 @@ export class AppComponent {
     return this.comidas;
   }
 
+  public getTotal() {
+    let total:number = 0;
+    this.consumiciones.forEach((consumicion) => total+=consumicion[1]);
+    return total;
+  }
+
   public addConsumicion() {
     this.consumiciones.push(this.comidas.find((comida) => comida[0] === this.comidaSeleccionada) || ['', 0]);
+  }
+  public deleteConsumicion(index: number) {
+    this.consumiciones.splice(index, 1);
   }
 }
