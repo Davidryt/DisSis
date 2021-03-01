@@ -15,7 +15,7 @@ export class AppComponent {
   costeTotal = 0;
 
 
-  public comidas: Array<[string, number]> = [['Ternera con bambú y setas', 7.0], ['Arroz tres delicias', 3.5], ['', 4.4]]
+  public comidas: Array<[string, number]> = [['Ternera con bambú y setas', 7.0], ['Arroz tres delicias', 3.5], ['Patatas Fritas', 4.4]]
 
   public comidaSeleccionada = 'Ternera con bambú y setas';
   public consumiciones: Array<[string, number]> = [];
@@ -28,12 +28,14 @@ export class AppComponent {
     return this.consumiciones;
   }
 
+
   public getComidas() {
     return this.comidas;
   }
 
   public addConsumicion() {
     this.consumiciones.push(this.comidas.find((comida) => comida[0] === this.comidaSeleccionada) || ['', 0]);
+    this.costeTotal=this.costeTotal + this.comidaSeleccionada[1]
   }
 }
 

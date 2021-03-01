@@ -23,10 +23,16 @@
     <tbody>
         <tr *ngFor='let consumicion of getConsumiciones()'>
             <td>{{consumicion[0]}}</td>
-            <td>{{consumicion[1]}}</td>
+            <td>{{consumicion[1]}} €</td>
         </tr>
+        <tr>
+          <td>Precio Total</td>
+          <td>500€</td>
+      </tr>
     </tbody>
 </table>
+
+
 
 <!-- <h2>Pipes</h2>
 <label>Nombre:</label> {{txtApellidos|uppercase}}<br/>
