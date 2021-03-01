@@ -1,25 +1,36 @@
+
 <body>
-  <div id="title">
+  
+
+<div style="text-align:center">
     <h1>
-      {{ title }}
+        Welcome to {{ title }}!
     </h1>
-  </div>
+</div>
 
-  <div>
-    Consumicion
-    <select id="comida" [ngModel]="seleccionado">
-      <option value="0">Terne1</option>
-      <option value="1">Pata</option>
-      <option value="2">Pico</option>
-    </select>
-    <button type="button" (click)="addLinea()">+</button>
-  </div>
-  <br/>
-  <br/>
+<br/>
+<h2>BOTÓN que añade elementos al MODELO:</h2>
+<select name='lstComidas' [(ngModel)]='comidaSeleccionada'>
+      <option *ngFor='let comida of getComidas()' [value]='comida[0]'>{{comida[0]}}</option>
+  </select>
+<button type='button' (click)='addConsumicion()'>+</button>
 
-  <div id="subtitle">
-    {{ subtitle }}:
-  </div>
+<table>
+    <thead>
+        <th>Producto</th>
+        <th>Precio</th>
+    </thead>
+    <tbody>
+        <tr *ngFor='let consumicion of getConsumiciones()'>
+            <td>{{consumicion[0]}}</td>
+            <td>{{consumicion[1]}}</td>
+        </tr>
+    </tbody>
+</table>
 
+<!-- <h2>Pipes</h2>
+<label>Nombre:</label> {{txtApellidos|uppercase}}<br/>
+<label>Importe:</label> {{ 12765.355 | currency }}<br/>
+<label>Importe:</label> {{ 12765.355 | currency:'EUR':'symbol':'3.2-2':'es' }} -->
 
 </body>
