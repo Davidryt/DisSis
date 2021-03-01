@@ -1,0 +1,25 @@
+<body>
+  <div id="title">
+    <h1>
+      {{ title }}
+    </h1>
+  </div>
+
+  <div>
+    Consumicion
+    <select id="comida" [ngModel]="seleccionado">
+      <option value="0">Terne1</option>
+      <option value="1">Pata</option>
+      <option value="2">Pico</option>
+    </select>
+    <button type="button" (click)="addLinea()">+</button>
+  </div>
+  <br/>
+  <br/>
+
+  <div id="subtitle">
+    {{ subtitle }}:
+  </div>
+
+
+</body>
