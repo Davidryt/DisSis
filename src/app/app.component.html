@@ -30,8 +30,8 @@
             <td>{{coche.$precio | currency:'EUR':'symbol':'1.0-2'}}</td>
             <td>{{coche.PVP}}</td>
             <td>
-              <button>Rebajar</button>
-              <button>Vender</button>
+              <button type='button' (click)='rebajarCoche(coche)>Rebajar</button>
+              <button  type=' button' (click)='deleteCoche(coche)'>Vender</button>
             </td>
           </tr>
           <tr>
