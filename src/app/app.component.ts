@@ -25,4 +25,7 @@ export class AppComponent {
     'NOSE',
     'NO_ENTIENDO_DE_COCHES'
   ]
+  public deleteCoche(index: number) {
+    this.coches.splice(index, 1);
+  }
 }
