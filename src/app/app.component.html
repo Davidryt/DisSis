@@ -27,6 +27,12 @@
             <td>{{coche.$modelo}}</td>
             <td>{{coche.$fecha_modelo | date:'longDate'}}</td>
             <td>{{coche.$fecha_venta}}</td>
+            <td>
+              <p *ngIf="coche.$estado == EstadoCoche.BUENO" style="background-color: green;">{{coche.$precio |
+                currency:'EUR':'symbol':'1.0-2'}}</p>
+              <p *ngIf="coche.$estado == EstadoCoche.MALO" style='background-color: red;'>{{coche.$precio |
+                currency:'EUR':'symbol':'1.0-2'}}</p>
+            </td>
             <td>{{coche.$precio | currency:'EUR':'symbol':'1.0-2'}}</td>
             <td>{{coche.PVP | currency:'EUR':'symbol':'1.0-0'}}</td>
             <td>
