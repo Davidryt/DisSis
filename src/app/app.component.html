@@ -1,19 +1,46 @@
 <div class="content" role="main">
-    <div class="card">
-      <div class="form-group">
-        <label for="search-text">Busca en nuestro catalogo de coches </label>
-        <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
-          [(ngModel)]="searchText" placeholder="Pa buscar, escribe yks" 
-          autofocus>
-      </div>
-      
-      <ul class="list-group list-group-flush">
-        NUESTROS COCHES:
-      <br>
-      <br>
-        <li class="list-group-item" *ngFor="let c of characters | appFilter: searchText">
-          {{c}} 
-        </li>
-      </ul>
+  <div class="card">
+    <div class="form-group">
+      <label for="search-text">Busca en nuestro catalogo de coches </label>
+      <input type="email" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+        placeholder="Pa buscar, escribe yks" autofocus>
     </div>
+
+    <ul class="list-group list-group-flush">
+      NUESTROS COCHES:
+      <br>
+      <table>
+        <thead>
+          <th>Foto</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Año</th>
+          <th>En venta desde</th>
+          <th>Precio</th>
+          <th>PVP</th>
+          <th>Acciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor='let coche of coches | appFilter: searchText'>
+            <td><img src='{{ "assets/images/" + coche.$foto + ".jpg" }}' /></td>
+            <td>{{coche.$marca}}</td>
+            <td>{{coche.$modelo}}</td>
+            <td>{{coche.$fecha_modelo | date:'longDate'}}</td>
+            <td>{{coche.$fecha_venta}}</td>
+            <td>{{coche.$precio | currency}}</td>
+            <td>{{coche.PVP}}</td>
+            <td>
+              <button>Rebajar</button>
+              <button>Vender</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Precio Total</td>
+            <td>500€</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </ul>
   </div>
+</div>

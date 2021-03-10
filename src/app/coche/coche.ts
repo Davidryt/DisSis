@@ -4,11 +4,6 @@ export enum EstadoCoche {
     BUENO,
     MALO
 }
-@Component({
-    selector: 'app-tarjeta',
-    templateUrl: './tarjeta.component.html',
-    styleUrls: ['./tarjeta.component.css']
-})
 export class Coche {
 
     private marca: string;
@@ -35,6 +30,9 @@ export class Coche {
      */
     public get $marca(): string {
         return this.marca;
+    }
+    public get PVP(): number {
+        return this.precio * 1.21;
     }
 
     /**
