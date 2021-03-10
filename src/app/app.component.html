@@ -22,12 +22,12 @@
         </thead>
         <tbody>
           <tr *ngFor='let coche of coches | appFilter: searchText'>
-            <td><img src='{{ "assets/images/" + coche.$foto + ".jpg" }}' /></td>
+            <td><img src='{{ "/assets/imagenes/" + coche.$foto }}' width="80px" /></td>
             <td>{{coche.$marca}}</td>
             <td>{{coche.$modelo}}</td>
             <td>{{coche.$fecha_modelo | date:'longDate'}}</td>
             <td>{{coche.$fecha_venta}}</td>
-            <td>{{coche.$precio | currency}}</td>
+            <td>{{coche.$precio | currency:'EUR':'symbol':'1.0-2'}}</td>
             <td>{{coche.PVP}}</td>
             <td>
               <button>Rebajar</button>
