@@ -25,7 +25,10 @@ export class AppComponent {
     'NOSE',
     'NO_ENTIENDO_DE_COCHES'
   ]
-  public deleteCoche(index: number) {
-    this.coches.splice(index, 1);
+  public deleteCoche(coche: Coche) {
+    this.coches.splice(this.coches.indexOf(coche), 1);
+  }
+  public rebajarCoche(coche: Coche) {
+    coche.$precio *= 0.9;
   }
 }
