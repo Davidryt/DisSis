@@ -1,16 +1,6 @@
-.cuerpo {
-    background-color: #FF7F50;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    .consumicion * {
-        margin: 5px;
-    }
-    .consTexto {
-        display: inline-block;
-    }
-    th {
-        font-weight: 400;
-        text-decoration: underline;
-    }
+button {
+    color:blue;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-weight: bold;
 }

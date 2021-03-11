@@ -3,11 +3,11 @@
     <div class="form-group">
       <label for="search-text">Busca en nuestro catalogo de coches </label>
       <input type="email" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
-        placeholder="Pa buscar, escribe yks" autofocus>
+        placeholder="Comienza escribiendo la marca" autofocus>
     </div>
 
     <ul class="list-group list-group-flush">
-      NUESTROS COCHES:
+      <h3>NUESTROS COCHES:</h3>
       <br>
       <table>
         <thead>
@@ -22,7 +22,9 @@
         </thead>
         <tbody>
           <tr *ngFor='let coche of coches | appFilter: searchText'>
-            <td><img src='{{ "/assets/imagenes/" + coche.$foto }}' width="80px" /></td>
+            <td><img src='{{ "/assets/imagenes/" + coche.$foto }}' width="80px" />
+                <p *ngIf= "coche.$foto==''" >No hay foto</p>
+            </td>
             <td>{{coche.$marca}}</td>
             <td>{{coche.$modelo}}</td>
             <td>{{coche.$fecha_modelo | date:'longDate'}}</td>
@@ -33,7 +35,6 @@
               <p *ngIf="coche.$estado == EstadoCoche.MALO" style='background-color: red;'>{{coche.$precio |
                 currency:'EUR':'symbol':'1.0-2'}}</p>
             </td>
-            <td>{{coche.$precio | currency:'EUR':'symbol':'1.0-2'}}</td>
             <td>{{coche.PVP | currency:'EUR':'symbol':'1.0-0'}}</td>
             <td>
               <button type='button' (click)='rebajarCoche(coche)'>Rebajar</button>
