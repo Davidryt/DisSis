@@ -5,6 +5,9 @@ import { Coche, EstadoCoche } from './coche/coche';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+//Cambiar a los contactos, objeto por contacto con los valores y crear array
+
 export class AppComponent {
   public EstadoCoche: any = EstadoCoche; // ESTA LINEA SOLO SIRVE PARA PODER USAR EstadoCoche en el TEMPLATE.
   public coches: Array<Coche> = [

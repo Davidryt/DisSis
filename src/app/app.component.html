@@ -1,48 +1,15 @@
 <div class="content" role="main">
   <div class="card">
     <div class="form-group">
-      <label for="search-text">Busca en nuestro catalogo de coches </label>
+      <label for="search-text">Buscar en contactos </label>
       <input type="email" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
-        placeholder="Comienza escribiendo la marca" autofocus>
+        placeholder="Nombre, apellido" autofocus>
     </div>
 
     <ul class="list-group list-group-flush">
-      <h3>NUESTROS COCHES:</h3>
+      <h3>Agenda</h3>
       <br>
-      <table>
-        <thead>
-          <th>Foto</th>
-          <th>Marca</th>
-          <th>Modelo</th>
-          <th>Año</th>
-          <th>En venta desde</th>
-          <th>Precio</th>
-          <th>PVP</th>
-          <th>Acciones</th>
-        </thead>
-        <tbody>
-          <tr *ngFor='let coche of coches | appFilter: searchText'>
-            <td><img src='{{ "/assets/imagenes/" + coche.$foto }}' width="80px" />
-                <p *ngIf= "coche.$foto==''" >No hay foto</p>
-            </td>
-            <td>{{coche.$marca}}</td>
-            <td>{{coche.$modelo}}</td>
-            <td>{{coche.$fecha_modelo | date:'longDate'}}</td>
-            <td>{{coche.$fecha_venta}}</td>
-            <td>
-              <p *ngIf="coche.$estado == EstadoCoche.BUENO" style="background-color: green;">{{coche.$precio |
-                currency:'EUR':'symbol':'1.0-2'}}</p>
-              <p *ngIf="coche.$estado == EstadoCoche.MALO" style='background-color: red;'>{{coche.$precio |
-                currency:'EUR':'symbol':'1.0-2'}}</p>
-            </td>
-            <td>{{coche.PVP | currency:'EUR':'symbol':'1.0-0'}}</td>
-            <td>
-              <button type='button' (click)='rebajarCoche(coche)'>Rebajar</button>
-              <button type=' button' (click)='deleteCoche(coche)'>Vender</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      
       <br>
     </ul>
   </div>
