@@ -1,6 +1,20 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 button {
     color:blue;
     margin-right: 10px;
     border-radius: 5px;
     font-weight: bold;
+}
+.contactos {
+    padding: 0 100px;
+    .fila {
+        background-color: white;
+        padding: 20px;
+        gap: 5px;
+        margin-top: 20px;
+        border-radius: 15px;
+        div {
+            width: 12.5%;
+        }
+    }
 }

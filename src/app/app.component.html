@@ -6,11 +6,16 @@
         placeholder="Nombre, apellido" autofocus>
     </div>
 
-    <ul class="list-group list-group-flush">
+    <div class="list-group list-group-flush">
       <h3>Agenda</h3>
+      <div fxLayout="column" fxLayoutAlign="space-between" class="contactos">
+        <div *ngFor="let contacto of [contactos, searchText] | appFilter" fxLayout="row" fxLayoutAlign="space-around" class="fila">
+          <div *ngFor="let propiedad of contacto.getAll()" flex="12.5">
+            {{propiedad}}
+          </div>
+        </div>
+      </div>
       <br>
-      
-      <br>
-    </ul>
+    </div>
   </div>
 </div>

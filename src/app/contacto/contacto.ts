@@ -49,6 +49,9 @@ export class Contacto {
     public get $tipo(): string {
         return this.tipo;
     }
+    public getAll(): Array<string> {
+        return [this.nombre, this.apellido, this.direc, this.cumpl.toDateString(), String(this.telf), this.emp, this.knol, this.tipo];
+    }
 
     public set $nombre(value: string) {
         this.nombre = value;
