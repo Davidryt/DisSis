@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
    * @param {string} searchText
    * @returns {any[]}
    */
-  transform(items: Coche[], searchText: string): any[] {
+  transform(items: Contacto[], searchText: string): any[] {
     if (!items) {
       return [];
     }
@@ -20,7 +20,7 @@ export class FilterPipe implements PipeTransform {
     searchText = searchText.toLocaleLowerCase();
 
     return items.filter(it => {
-      return it.$marca.toLocaleLowerCase().startsWith(searchText);
+      return it.$nombre.toLocaleLowerCase().startsWith(searchText);
     });
   }
 }
