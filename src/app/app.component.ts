@@ -9,37 +9,26 @@ import { Contacto } from './contacto/contacto';
 //Cambiar a los contactos, objeto por contacto con los valores y crear array
 
 export class AppComponent {
-  public EstadoCoche: any = EstadoCoche; // ESTA LINEA SOLO SIRVE PARA PODER USAR EstadoCoche en el TEMPLATE.
-  public coches: Array<Coche> = [
-    new Coche('renault', 'scenic', new Date(2007, 10, 1), new Date(2018, 3, 1), 6500, 'coche01.jpg', EstadoCoche.BUENO),
-    new Coche('SEAT', 'ibiza', new Date(2011, 10, 1), new Date(2019, 3, 1), 12000, 'coche02.jpg', EstadoCoche.MALO),
-    new Coche('renault', 'laguna', new Date(2012, 10, 1), new Date(2017, 1, 1), 3000, 'coche03.jpg', EstadoCoche.BUENO),
-    new Coche('TESLA', 'model 3', new Date(2017, 10, 1), new Date(2020, 5, 1), 45000, '', EstadoCoche.BUENO)
-  ];
-
   public contactos: Array<Contacto> = [
-    new Coche('renault', 'scenic', new Date(2007, 10, 1), new Date(2018, 3, 1), 6500, 'coche01.jpg', EstadoCoche.BUENO),
-    new Coche('SEAT', 'ibiza', new Date(2011, 10, 1), new Date(2019, 3, 1), 12000, 'coche02.jpg', EstadoCoche.MALO),
-    new Coche('renault', 'laguna', new Date(2012, 10, 1), new Date(2017, 1, 1), 3000, 'coche03.jpg', EstadoCoche.BUENO),
-    new Coche('TESLA', 'model 3', new Date(2017, 10, 1), new Date(2020, 5, 1), 45000, '', EstadoCoche.BUENO)
+    new Contacto('David', 'Rico','Avenida Bad Bunny,15' ,new Date(1999, 7,28), 644220727, 'Google','Tiene calle','no se'),
+    new Contacto('pepe', 'Rico','Avenida aaaaaaaaa' ,new Date(1999, 7,28), 1234, 'Tesla','idk','no se'),
+    new Contacto('jaime', 'bbbbbbb','Avenida bbbbbbbb' ,new Date(1999, 7,28), 5678, 'Audi','','no se'),
+    new Contacto('javie', 'cccccccc','Avenida cccccccc' ,new Date(1999, 7,28), 1357, 'Carrefour','vaya con el carrefour','no se'),
+    new Contacto('ignacio', 'ddddddd','Avenida dddddddd' ,new Date(1999, 7,28), 2468, 'Patata','gym boi','no se')
+    
   ];
 
-  title = 'Car Comparator Filter';
+  title = 'Contact Filter';
   searchText = '';
   characters = [
-    'AUDI',
-    'TESLA',
-    'MERCEDES BENZ',
-    'SEAT',
-    'TOYOTA',
-    'COCHES',
-    'NOSE',
-    'NO_ENTIENDO_DE_COCHES'
+    'DAVID',
+    'PEPE',
+    'JAIME',
+    'JAVIER',
+    'IGNACIO',
   ]
-  public deleteCoche(coche: Coche) {
-    this.coches.splice(this.coches.indexOf(coche), 1);
+  public deleteContact(value: Contacto) {
+    this.contactos.splice(this.contactos.indexOf(value), 1);
   }
-  public rebajarCoche(coche: Coche) {
-    coche.$precio *= 0.9;
-  }
+  
 }
