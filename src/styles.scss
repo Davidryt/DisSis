@@ -3,8 +3,12 @@
   text-align: center;
   padding: 20px;
   border: 2px solid black;
+  font-size: 1.2rem;
   input {
-    width: 200px;
+    width: 80%;
+    border-radius: 15px;
+    padding: 15px;
+    margin-left: 10px;
     border: 1px solid black;
   }
 }
@@ -29,6 +33,30 @@
     }
     td {
       border: 2px solid black;
+    }
+  }
+}
+.toolbar {
+  height: 100px !important;
+  justify-content: space-between;
+  padding: 30px !important;
+}
+.titulo {
+  font-size: large;
+  font-weight: 700;
+  margin: 30px !important;
+}
+.contactos {
+  padding: 0 100px;
+  .fila {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    div {
+      width: 11.1%;
+      display: flex;
+      align-items: center;
     }
   }
 }

@@ -1,0 +1,76 @@
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item (click)="this.router.navigate(['crear'])">
+    Nuevo contacto
+  </button>
+</mat-menu>
+
+<mat-toolbar>
+  <mat-toolbar-row class="toolbar">
+    <button
+      mat-flat-button
+      aria-label="Example icon-button with a heart icon"
+      [matMenuTriggerFor]="appMenu"
+    >
+      Opciones
+    </button>
+    <span style="font-size: 28px; flex-grow: 1; margin-left: 10px">Agenda</span>
+    <mat-form-field fxFlex="40">
+      <mat-label> Buscar nombres que empiecen por... </mat-label>
+      <input
+        [(ngModel)]="searchText"
+        type="email"
+        matInput
+        placeholder="Nombre"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="content" role="main">
+  <div class="card">
+    <div class="list-group list-group-flush">
+      <div fxLayout="column" fxLayoutAlign="space-between" class="contactos">
+        <div fxLayout="row" class="fila">
+          <div
+            *ngFor="let propiedad of getPropiedades()"
+            style="justify-content: flex-start"
+          >
+            {{ propiedad }}
+          </div>
+        </div>
+        <div
+          *ngFor="let contacto of getContactos() | appFilter: searchText"
+          fxLayout="row"
+          fxLayoutAlign="space-around"
+          class="fila"
+        >
+          <div *ngFor="let propiedad of contacto.getAll()" flex="12.5">
+            {{ propiedad }}
+          </div>
+          <div>
+            <button
+              (click)="editar(contacto)"
+              mat-icon-button
+              matTooltip="Click para editar"
+              class="iconbutton"
+              color="primary"
+            >
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+            <button
+              (click)="eliminar(contacto)"
+              mat-icon-button
+              matTooltip="Click para eliminar"
+              class="iconbutton"
+              color="warn"
+            >
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>
