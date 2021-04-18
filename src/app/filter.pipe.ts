@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Coche } from './coche/coche';
+import { Contacto } from './contacto/contacto';
 
 @Pipe({ name: 'appFilter' })
 export class FilterPipe implements PipeTransform {
