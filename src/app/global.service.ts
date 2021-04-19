@@ -9,11 +9,11 @@ export class GlobalService {
   constructor() { }
 
   public contactos: Array<Contacto> = [
-    new Contacto('David', 'Rico','Avenida Bad Bunny,15' ,new Date(1999, 7,28), 644220727, 'Google','Tiene calle','no se'),
-    new Contacto('pepe', 'Rico','Avenida aaaaaaaaa' ,new Date(1999, 7,28), 1234, 'Tesla','idk','no se'),
-    new Contacto('jaime', 'bbbbbbb','Avenida bbbbbbbb' ,new Date(1999, 7,28), 5678, 'Audi','','no se'),
-    new Contacto('javie', 'cccccccc','Avenida cccccccc' ,new Date(1999, 7,28), 1357, 'Carrefour','vaya con el carrefour','no se'),
-    new Contacto('ignacio', 'ddddddd','Avenida dddddddd' ,new Date(1999, 7,28), 2468, 'Patata','gym boi','no se')
+    new Contacto('David', 'Rico','Avenida Bad Bunny,15' ,new Date(1999, 7,28), 644220727, 'Google','Solucionador de problemas','Trabajo'),
+    new Contacto('Ana', 'Rico','Avenida de la estacion' ,new Date(2002, 5,14), 632784609, 'Tesla','','Personal'),
+    new Contacto('Jaime', 'Pavon','Paseo de las desgracias' ,new Date(1978, 9,11), 722480757, 'Audi','','Personal'),
+    new Contacto('Javier', 'Lopez','Calle Libreros' ,new Date(1989,1,30), 611097865, 'Carrefour','Ojo con el carrefour',''),
+    new Contacto('Ignacio', 'Palacios','Calle Cuenca' ,new Date(1964, 2,3), 735340956, 'Ubisoft','Hace juegos','Trabajo')
     
   ];
 
