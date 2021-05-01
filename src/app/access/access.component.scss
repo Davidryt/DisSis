@@ -1,0 +1,88 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(309deg, #00ccff, #d5efff);
+  background-size: 400% 400%;
+
+  -webkit-animation: bgAnim 31s ease infinite;
+  -moz-animation: bgAnim 31s ease infinite;
+  animation: bgAnim 31s ease infinite;
+
+  .logo {
+    width: 80%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+
+  .signin {
+    width: 100%;
+  }
+}
+@-webkit-keyframes bgAnim {
+  0% {
+    background-position: 0% 9%;
+  }
+  50% {
+    background-position: 100% 92%;
+  }
+  100% {
+    background-position: 0% 9%;
+  }
+}
+@-moz-keyframes bgAnim {
+  0% {
+    background-position: 0% 9%;
+  }
+  50% {
+    background-position: 100% 92%;
+  }
+  100% {
+    background-position: 0% 9%;
+  }
+}
+@keyframes bgAnim {
+  0% {
+    background-position: 0% 9%;
+  }
+  50% {
+    background-position: 100% 92%;
+  }
+  100% {
+    background-position: 0% 9%;
+  }
+}
+.card__container {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  .tarjeta {
+    width: 100%;
+    height: max-content;
+    margin: auto 0px;
+    padding: 40px !important;
+    max-width: 450px;
+    mat-card-title {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 1200px) {
+      margin: 40px auto;
+      max-width: 70vw;
+    }
+  }
+  .separator {
+    height: 200px;
+    width: 2px;
+    background-color: white;
+    margin: auto 60px;
+    @media (max-width: 1200px) {
+      height: 2px;
+      width: 300px;
+      margin: auto;
+    }
+  }
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+}

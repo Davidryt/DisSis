@@ -13,6 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 // ELEMENTOS UI ESPECÍFICOS:
 import { MatBadgeModule } from '@angular/material/badge';
@@ -69,6 +70,7 @@ import { LOCALE_ID } from '@angular/core';
     MatProgressSpinnerModule,
     MatMenuModule,
     MatGridListModule,
+    MatCardModule,
   ],
   providers: [GlobalService, { provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],

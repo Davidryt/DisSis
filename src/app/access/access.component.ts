@@ -25,12 +25,7 @@ export class AccessComponent implements OnInit {
 
   public contacto: Contacto;
 
-  ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      this.id = params.get('id');
-      this.contacto = this.global.getContacto(this.id);
-    });
-  }
+  ngOnInit() {}
   getTipos() {
     return ['Personal', 'Desarrollo', 'Agile', 'DevOps', 'Compañero'];
   }
