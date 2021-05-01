@@ -1,0 +1,17 @@
+<div class="content" role="main">
+  <mat-grid-list cols="6" rowHeight="49.8%">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color"
+    >
+      <div class="grid__container">
+        <div class="grid__container__content">
+          <img alt="icon" src="{{ tile.src }}" />
+          <h1>{{ tile.text }}</h1>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

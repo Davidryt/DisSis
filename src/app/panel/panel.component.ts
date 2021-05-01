@@ -5,12 +5,19 @@ import { MatTable } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Contacto } from '../contacto/contacto';
 
+export interface Tile {
+  color: string;
+  cols: number;
+  rows: number;
+  text: string;
+  src: string;
+}
 @Component({
-  selector: 'app-listado',
-  templateUrl: './listado.component.html',
-  styleUrls: ['./listado.component.scss'],
+  selector: 'app-panel',
+  templateUrl: './panel.component.html',
+  styleUrls: ['./panel.component.scss'],
 })
-export class ListadoComponent implements OnInit {
+export class PanelComponent implements OnInit {
   constructor(
     public router: Router,
     public route: ActivatedRoute,
@@ -19,6 +26,36 @@ export class ListadoComponent implements OnInit {
   ) {}
 
   searchText = '';
+  tiles: Tile[] = [
+    {
+      text: 'Llamar',
+      cols: 4,
+      rows: 1,
+      color: '#ffdc5c',
+      src: 'assets/imagenes/phone.svg',
+    },
+    {
+      text: 'Emergencia',
+      cols: 2,
+      rows: 2,
+      color: '#ff6666',
+      src: 'assets/imagenes/emergency.svg',
+    },
+    {
+      text: 'Chat',
+      cols: 2,
+      rows: 1,
+      color: 'lightblue',
+      src: 'assets/imagenes/chat.svg',
+    },
+    {
+      text: 'Mantenimiento',
+      cols: 2,
+      rows: 1,
+      color: 'lightgrey',
+      src: 'assets/imagenes/mantenimiento.svg',
+    },
+  ];
   ngOnInit(): void {}
 
   public getContactos = () => {

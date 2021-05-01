@@ -27,19 +27,20 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatGridListModule } from '@angular/material/grid-list';
 
-import { ListadoComponent } from './listado/listado.component';
-import { CrearComponent } from './crear/crear.component';
+import { PanelComponent } from './panel/panel.component';
+import { AccessComponent } from './access/access.component';
+import { AdminComponent } from './admin/admin.component';
 import { GlobalService } from './global.service';
-import { EditarComponent } from './editar/editar.component';
 import { LOCALE_ID } from '@angular/core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoComponent,
-    CrearComponent,
-    EditarComponent,
+    PanelComponent,
+    AccessComponent,
+    AdminComponent,
     FilterPipe,
   ],
   imports: [
@@ -67,6 +68,7 @@ import { LOCALE_ID } from '@angular/core';
     MatCheckboxModule,
     MatProgressSpinnerModule,
     MatMenuModule,
+    MatGridListModule,
   ],
   providers: [GlobalService, { provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],

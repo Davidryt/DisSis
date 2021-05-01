@@ -9,11 +9,11 @@ import { GlobalService } from '../global.service';
 import { Contacto } from '../contacto/contacto';
 
 @Component({
-  selector: 'app-crear',
-  templateUrl: './crear.component.html',
-  styleUrls: ['./crear.component.scss'],
+  selector: 'app-access',
+  templateUrl: './access.component.html',
+  styleUrls: ['./access.component.scss'],
 })
-export class CrearComponent implements OnInit {
+export class AccessComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -27,7 +27,8 @@ export class CrearComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      this.contacto = new Contacto();
+      this.id = params.get('id');
+      this.contacto = this.global.getContacto(this.id);
     });
   }
   getTipos() {
@@ -36,7 +37,6 @@ export class CrearComponent implements OnInit {
 
   public aceptar() {
     console.log(this.contacto);
-    this.global.nuevoContacto(this.contacto);
 
     this.router.navigate(['list/']);
   }

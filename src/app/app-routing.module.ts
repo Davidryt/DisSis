@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ListadoComponent} from './listado/listado.component';
-import {CrearComponent} from './crear/crear.component';
-import {EditarComponent} from './editar/editar.component';
+import { PanelComponent } from './panel/panel.component';
+import { AccessComponent } from './access/access.component';
+import { AdminComponent } from './admin/admin.component';
 
-
-const routes: Routes = [{path:'list',component:ListadoComponent},
-                        {path:'',redirectTo:'/list',pathMatch:'full'},
-                        {path:'crear',component:CrearComponent},
-                        {path:'edit/:id',component:EditarComponent}];
+const routes: Routes = [
+  { path: 'panel', component: PanelComponent },
+  { path: '', redirectTo: '/panel', pathMatch: 'full' },
+  { path: 'access/admin', component: AccessComponent },
+  { path: 'admin', component: AdminComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
