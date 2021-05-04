@@ -49,11 +49,11 @@ export class PanelComponent implements OnInit {
       src: 'assets/imagenes/chat.svg',
     },
     {
-      text: 'Mantenimiento',
+      text: 'Entretenimiento',
       cols: 2,
       rows: 1,
       color: 'lightgrey',
-      src: 'assets/imagenes/mantenimiento.svg',
+      src: 'assets/imagenes/tv.svg',
     },
   ];
   ngOnInit(): void {}
