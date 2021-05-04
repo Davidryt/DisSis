@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Contacto } from './contacto/contacto';
+import { paciente } from './paciente/paciente';
 
 @Pipe({ name: 'appFilter' })
 export class FilterPipe implements PipeTransform {
@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
    * @param {string} searchText
    * @returns {any[]}
    */
-  transform(items: Contacto[], searchText: string): any[] {
+  transform(items: paciente[], searchText: string): any[] {
     if (!items) {
       return [];
     }
@@ -19,7 +19,7 @@ export class FilterPipe implements PipeTransform {
     }
     searchText = searchText.toLocaleLowerCase();
 
-    return items.filter(it => {
+    return items.filter((it) => {
       return it.$nombre.toLocaleLowerCase().startsWith(searchText);
     });
   }

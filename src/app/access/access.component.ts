@@ -6,7 +6,6 @@ import {
   NavigationStart,
 } from '@angular/router';
 import { GlobalService } from '../global.service';
-import { Contacto } from '../contacto/contacto';
 
 @Component({
   selector: 'app-access',
@@ -18,25 +17,8 @@ export class AccessComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private global: GlobalService
-  ) {
-    this.contacto = new Contacto();
-  }
+  ) {}
   public id: any;
 
-  public contacto: Contacto;
-
   ngOnInit() {}
-  getTipos() {
-    return ['Personal', 'Desarrollo', 'Agile', 'DevOps', 'Compañero'];
-  }
-
-  public aceptar() {
-    console.log(this.contacto);
-
-    this.router.navigate(['list/']);
-  }
-
-  public cancelar() {
-    this.router.navigate(['list/']);
-  }
 }

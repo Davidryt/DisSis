@@ -6,7 +6,7 @@ import {
   NavigationStart,
 } from '@angular/router';
 import { GlobalService } from '../global.service';
-import { Contacto } from '../contacto/contacto';
+import { paciente } from '../paciente/paciente';
 
 @Component({
   selector: 'app-admin',
@@ -19,29 +19,31 @@ export class AdminComponent implements OnInit {
     private route: ActivatedRoute,
     private global: GlobalService
   ) {
-    this.contacto = new Contacto();
+    this.paciente = new paciente();
   }
   public id: any;
 
-  public contacto: Contacto;
+  public paciente: paciente;
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      this.contacto = new Contacto();
+      this.paciente = new paciente();
     });
   }
-  getTipos() {
-    return ['Personal', 'Desarrollo', 'Agile', 'DevOps', 'Compañero'];
-  }
 
-  public aceptar() {
-    console.log(this.contacto);
-    this.global.nuevoContacto(this.contacto);
+  public getPacientes = () => {
+    return this.global.pacientes;
+  };
+  public getPropiedades = () => {
+    return ['Nombre', 'Apellidos', 'Desayuno', 'Comida', 'Cena'];
+  };
 
-    this.router.navigate(['list/']);
-  }
-
-  public cancelar() {
-    this.router.navigate(['list/']);
-  }
+  public editar = (pac: paciente) => {
+    const id = this.global.pacientes.indexOf(pac);
+    this.router.navigate(['/edit', id]);
+  };
+  public eliminar = (pac: paciente) => {
+    const id = this.global.pacientes.indexOf(pac);
+    this.global.borrar(id);
+  };
 }

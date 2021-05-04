@@ -1,43 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Contacto } from './contacto/contacto';
+import { paciente } from './paciente/paciente';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlobalService {
+  constructor() {}
 
-  constructor() { }
-
-  public contactos: Array<Contacto> = [
-    new Contacto('David', 'Rico','Avenida Bad Bunny,15' ,new Date(1999, 7,28), 644220727, 'Google','Tiene calle','no se'),
-    new Contacto('pepe', 'Rico','Avenida aaaaaaaaa' ,new Date(1999, 7,28), 1234, 'Tesla','idk','no se'),
-    new Contacto('jaime', 'bbbbbbb','Avenida bbbbbbbb' ,new Date(1999, 7,28), 5678, 'Audi','','no se'),
-    new Contacto('javie', 'cccccccc','Avenida cccccccc' ,new Date(1999, 7,28), 1357, 'Carrefour','vaya con el carrefour','no se'),
-    new Contacto('ignacio', 'ddddddd','Avenida dddddddd' ,new Date(1999, 7,28), 2468, 'Patata','gym boi','no se')
-    
+  public pacientes: Array<paciente> = [
+    new paciente('David', 'Rico', [true, false, false], '10', '', true),
+    new paciente('pepe', 'Rico', [true, false, false], '', '', true),
+    new paciente('jaime', 'bbbbbbb', [true, false, false], '', '', true),
+    new paciente('javie', 'cccccccc', [true, false, false], '', '130', true),
+    new paciente('ignacio', 'ddddddd', [true, false, false], '', '', true),
   ];
 
-  public borrar(id: number)
-  {
-    this.contactos.splice(id,1);
+  public borrar(id: number) {
+    this.pacientes.splice(id, 1);
   }
 
-  public updateContacto(id:number,contacto:Contacto)
-  {
-    this.contactos[id]=contacto;
+  public updatepaciente(id: number, paciente: paciente) {
+    this.pacientes[id] = paciente;
   }
-  public getContacto(id:number)
-  {
-    return this.contactos[id];
+  public getpaciente(id: number) {
+    return this.pacientes[id];
   }
 
-  public nuevoContacto(contacto:Contacto)
-  {
-    this.contactos.push(contacto);
+  public nuevopaciente(paciente: paciente) {
+    this.pacientes.push(paciente);
   }
 
-  public getNContactos()
-  {
-    return this.contactos.length;
+  public getNpacientes() {
+    return this.pacientes.length;
   }
 }

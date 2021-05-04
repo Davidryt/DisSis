@@ -1,94 +1,90 @@
 <div fxLayout="row" fxLayoutAlign="center">
-  <div fxFlex="66" fxFlexFill fxLayout="column" fxLayoutAlign="center">
-    <p fxFlex fxFlexAlign="center" class="titulo">Nuevo Contacto</p>
+  <div fxFlex="85" fxFlexFill fxLayout="column" fxLayoutAlign="center">
+    <p fxFlex fxFlexAlign="center" class="titulo">Pacientes</p>
 
-    <mat-expansion-panel [expanded]="true">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <h3>Datos personales</h3>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div fxLayout="column" fxLayoutAlign="center">
-        <mat-form-field
-          ><input
-            matInput
-            type="text"
-            placeholder="Nombre"
-            [(ngModel)]="contacto.$nombre"
-            name="nombre"
-        /></mat-form-field>
-        <mat-form-field
-          ><input
-            matInput
-            type="text"
-            placeholder="Apellidos"
-            [(ngModel)]="contacto.$apellido"
-            name="nombre"
-        /></mat-form-field>
-        <mat-form-field
-          ><input
-            matInput
-            type="text"
-            placeholder="Direccion"
-            [(ngModel)]="contacto.$direc"
-            name="nombre"
-        /></mat-form-field>
-        <mat-form-field
-          ><input
-            matInput
-            type="number"
-            placeholder="Teléfono"
-            [(ngModel)]="contacto.$telf"
-            name="telefono"
-        /></mat-form-field>
-        <mat-form-field
-          ><input
-            matInput
-            type="date"
-            placeholder="Cumpleaños"
-            [(ngModel)]="contacto.humanDate"
-            name="cumple"
-        /></mat-form-field>
-        <mat-form-field
-          ><input
-            matInput
-            type="text"
-            placeholder="Empresa y cargo"
-            [(ngModel)]="contacto.$emp"
-            name="emp"
-        /></mat-form-field>
-        <mat-form-field
-          ><input
-            matInput
-            type="text"
-            placeholder="Conocimiento extra"
-            [(ngModel)]="contacto.$knol"
-            name="cono"
-        /></mat-form-field>
-        <mat-form-field>
-          <mat-label>Tipo</mat-label>
-          <mat-select [(ngModel)]="contacto.$tipo" name="tipo">
-            <mat-option
-              *ngFor="let tipo of getTipos(); let i = index"
-              [value]="i"
-            >
-              {{ tipo }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+    <div fxLayout="column" fxLayoutAlign="center space-between">
+      <div fxLayout="row" fxLayoutAlign="space-around" class="fila">
+        <div
+          fxLayout="row"
+          fxLayoutAlign="flex-start center"
+          class="paciente__nombre"
+        >
+          <div class="paciente__propiedad">Nombre</div>
+          <div class="paciente__propiedad">Apellidos</div>
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="space-around center"
+          class="paciente__comidas"
+        >
+          <div>Desayuno</div>
+          <div>Comida</div>
+          <div>Cena</div>
+        </div>
+        <div
+          fxLayout="row"
+          fxAlign="space-between center"
+          class="paciente__extra"
+        >
+          <div>Medidas vitales</div>
+          <div>En observacion</div>
+        </div>
       </div>
-    </mat-expansion-panel>
+      <div
+        *ngFor="let paciente of getPacientes() | appFilter: searchText"
+        fxLayout="row"
+        fxLayoutAlign="space-around"
+        class="fila"
+      >
+        <div
+          fxLayout="row"
+          fxLayoutAlign="flex-start center"
+          class="paciente__nombre"
+        >
+          <div
+            *ngFor="let propiedad of paciente.getAll()"
+            class="paciente__propiedad"
+          >
+            {{ propiedad }}
+          </div>
+        </div>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="space-around center"
+          class="paciente__comidas"
+        >
+          <div *ngFor="let comida of paciente.$comidas">
+            <img src="assets/imagenes/check.svg" *ngIf="comida" alt="check" />
+            <img src="assets/imagenes/close.svg" *ngIf="!comida" alt="cross" />
+          </div>
+        </div>
+        <div
+          fxLayout="row"
+          fxAlign="space-between center"
+          class="paciente__extra"
+        >
+          <div *ngIf="paciente.$oxygen">
+            Nivel de oxigeno: {{ paciente.$oxygen }}
+          </div>
 
-    <div fxLayout="row" style="margin-top: 50px">
-      <div fxFlex fxLayoutAlign="center">
-        <button (click)="aceptar()" mat-flat-button color="primary">
-          Aceptar
-        </button>
-      </div>
-      <div fxFlex fxLayoutAlign="center">
-        <button (click)="cancelar()" mat-flat-button color="primary">
-          Cancelar
-        </button>
+          <div *ngIf="paciente.$pressure">
+            Presion arterial: {{ paciente.$pressure }}
+          </div>
+          <div *ngIf="!paciente.$pressure && !paciente.$oxygen"></div>
+
+          <div>
+            <img
+              src="assets/imagenes/check.svg"
+              *ngIf="paciente.$observacion"
+              alt="check"
+            />
+            <img
+              src="assets/imagenes/close.svg"
+              *ngIf="!paciente.$observacion"
+              alt="cross"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,30 @@
+.paciente {
+  &__propiedad {
+    width: 50%;
+  }
+  &__nombre {
+    width: 15%;
+  }
+  &__comidas {
+    width: 45%;
+  }
+  &__extra {
+    width: 40%;
+    > :last-child {
+      display: flex;
+      flex-grow: 1;
+      text-align: end;
+      justify-content: flex-end;
+      img {
+        max-width: 20px;
+      }
+    }
+  }
+}
+.fila {
+  margin-bottom: 40px;
+  &:first-of-type {
+    font-weight: 700;
+    font-size: large;
+  }
+}
