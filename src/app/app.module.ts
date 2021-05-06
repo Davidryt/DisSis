@@ -33,6 +33,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { PanelComponent } from './panel/panel.component';
 import { AccessComponent } from './access/access.component';
 import { AdminComponent } from './admin/admin.component';
+import { FamiliaComponent } from './familia/familia.component';
 import { GlobalService } from './global.service';
 import { LOCALE_ID } from '@angular/core';
 
@@ -42,6 +43,7 @@ import { LOCALE_ID } from '@angular/core';
     PanelComponent,
     AccessComponent,
     AdminComponent,
+    FamiliaComponent,
     FilterPipe,
   ],
   imports: [

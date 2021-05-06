@@ -2,11 +2,11 @@
   <!-- <img src="assets/imagenes/logo.png" /> -->
   <span class="mat-display-2">Project Alpha</span>
   <span class="header--separator"></span>
-  <span class="mat-display-1">Admin</span>
+  <span class="mat-display-1">Familia</span>
 </mat-toolbar>
 <div class="container" fxLayout="row" fxLayoutAlign="center">
   <div fxFlex="85" fxFlexFill fxLayout="column" fxLayoutAlign="center">
-    <div fxFlex class="titulo">Residentes</div>
+    <div fxFlex class="titulo">Familiares</div>
 
     <div fxLayout="column" fxLayoutAlign="center space-between">
       <div fxLayout="row" fxLayoutAlign="space-around" class="fila">
@@ -32,8 +32,7 @@
           fxAlign="space-between center"
           class="paciente__extra"
         >
-          <div>Medidas vitales</div>
-          <div>En observacion</div>
+          <div>Acciones</div>
         </div>
       </div>
       <div
@@ -69,27 +68,9 @@
           fxAlign="space-between center"
           class="paciente__extra"
         >
-          <div *ngIf="paciente.$oxygen">
-            Nivel de oxigeno: {{ paciente.$oxygen }}
-          </div>
+          <button>Llamar</button>
 
-          <div *ngIf="paciente.$pressure">
-            Presion arterial: {{ paciente.$pressure }}
-          </div>
-          <div *ngIf="!paciente.$pressure && !paciente.$oxygen"></div>
-
-          <div>
-            <img
-              src="assets/imagenes/check.svg"
-              *ngIf="paciente.$observacion"
-              alt="check"
-            />
-            <img
-              src="assets/imagenes/close.svg"
-              *ngIf="!paciente.$observacion"
-              alt="cross"
-            />
-          </div>
+          <button>Chat</button>
         </div>
       </div>
     </div>

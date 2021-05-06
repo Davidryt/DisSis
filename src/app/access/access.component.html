@@ -7,7 +7,7 @@
         <mat-card-content fxLayout="column" fxLayoutAlign="center">
           <mat-form-field>
             <mat-label>Rol</mat-label>
-            <mat-select [(ngModel)]="contacto.$tipo" name="tipo">
+            <mat-select [(ngModel)]="user.$tipo" name="tipo">
               <mat-option
                 *ngFor="let tipo of getTipos(); let i = index"
                 [value]="tipo"
@@ -22,7 +22,7 @@
               matInput
               type="text"
               placeholder="Nombre de usuario"
-              [(ngModel)]="contacto.$nombre"
+              [(ngModel)]="user.$nombre"
               name="nombre"
           /></mat-form-field>
           <mat-form-field
@@ -30,7 +30,7 @@
               matInput
               type="text"
               placeholder="Contraseña"
-              [(ngModel)]="contacto.$apellido"
+              [(ngModel)]="user.$apellido"
               name="nombre"
           /></mat-form-field>
         </mat-card-content>
@@ -49,7 +49,7 @@
         <mat-card-content fxLayout="column" fxLayoutAlign="center">
           <mat-form-field>
             <mat-label>Residencia</mat-label>
-            <mat-select [(ngModel)]="contacto.$tipo" name="tipo">
+            <mat-select [(ngModel)]="user.$tipo" name="tipo">
               <mat-option
                 *ngFor="let tipo of getTipos(); let i = index"
                 [value]="tipo"
@@ -63,7 +63,7 @@
               matInput
               type="text"
               placeholder="Nombre de usuario"
-              [(ngModel)]="contacto.$nombre"
+              [(ngModel)]="user.$nombre"
               name="nombre"
           /></mat-form-field>
           <mat-form-field
@@ -71,7 +71,7 @@
               matInput
               type="password"
               placeholder="Contraseña"
-              [(ngModel)]="contacto.$apellido"
+              [(ngModel)]="user.$apellido"
               name="nombre"
           /></mat-form-field>
           <mat-form-field
@@ -79,7 +79,7 @@
               matInput
               type="text"
               placeholder="Nombre y apellidos"
-              [(ngModel)]="contacto.$direc"
+              [(ngModel)]="user.$direc"
               name="nombre"
           /></mat-form-field>
           <mat-form-field
@@ -87,7 +87,7 @@
               matInput
               type="text"
               placeholder="Dirección"
-              [(ngModel)]="contacto.$direc"
+              [(ngModel)]="user.$direc"
               name="nombre"
           /></mat-form-field>
           <mat-form-field
@@ -95,7 +95,7 @@
               matInput
               type="number"
               placeholder="Teléfono"
-              [(ngModel)]="contacto.$telf"
+              [(ngModel)]="user.$telf"
               name="telefono"
           /></mat-form-field>
 
@@ -104,7 +104,7 @@
               matInput
               type="text"
               placeholder="ID de familiar"
-              [(ngModel)]="contacto.$emp"
+              [(ngModel)]="user.$emp"
               name="emp"
           /></mat-form-field>
         </mat-card-content>

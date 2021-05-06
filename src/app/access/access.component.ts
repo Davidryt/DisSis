@@ -19,6 +19,6 @@ export class AccessComponent implements OnInit {
     private global: GlobalService
   ) {}
   public id: any;
-
+  public user: any;
   ngOnInit() {}
 }
