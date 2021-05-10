@@ -7,12 +7,9 @@
         <mat-card-content fxLayout="column" fxLayoutAlign="center">
           <mat-form-field>
             <mat-label>Rol</mat-label>
-            <mat-select [(ngModel)]="user.$tipo" name="tipo">
-              <mat-option
-                *ngFor="let tipo of getTipos(); let i = index"
-                [value]="tipo"
-              >
-                {{ tipo }}
+            <mat-select [(ngModel)]="user.rol" name="rol">
+              <mat-option *ngFor="let rol of getTipos()" [value]="rol">
+                {{ rol }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -22,7 +19,7 @@
               matInput
               type="text"
               placeholder="Nombre de usuario"
-              [(ngModel)]="user.$nombre"
+              [(ngModel)]="user.name"
               name="nombre"
           /></mat-form-field>
           <mat-form-field
@@ -30,14 +27,14 @@
               matInput
               type="text"
               placeholder="Contraseña"
-              [(ngModel)]="user.$apellido"
+              [(ngModel)]="user.pass"
               name="nombre"
           /></mat-form-field>
         </mat-card-content>
 
         <mat-card-actions fxLayout="row" style="margin-top: 50px">
           <div fxFlex fxLayoutAlign="center">
-            <button (click)="aceptar()" mat-flat-button color="primary">
+            <button (click)="iniciar()" mat-flat-button color="primary">
               Acceder
             </button>
           </div>
@@ -49,12 +46,12 @@
         <mat-card-content fxLayout="column" fxLayoutAlign="center">
           <mat-form-field>
             <mat-label>Residencia</mat-label>
-            <mat-select [(ngModel)]="user.$tipo" name="tipo">
+            <mat-select [(ngModel)]="user.rol" name="rol">
               <mat-option
-                *ngFor="let tipo of getTipos(); let i = index"
-                [value]="tipo"
+                *ngFor="let rol of getTipos(); let i = index"
+                [value]="rol"
               >
-                {{ tipo }}
+                {{ rol }}
               </mat-option>
             </mat-select>
           </mat-form-field>

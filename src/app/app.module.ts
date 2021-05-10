@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe'; // -> imported filter pipe
+import { CookieService } from 'ngx-cookie-service';
 
 // GENERICOS DE MATERIAL:
 import { MatIconModule } from '@angular/material/icon';
@@ -36,6 +37,7 @@ import { AdminComponent } from './admin/admin.component';
 import { FamiliaComponent } from './familia/familia.component';
 import { GlobalService } from './global.service';
 import { LOCALE_ID } from '@angular/core';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { LOCALE_ID } from '@angular/core';
     AdminComponent,
     FamiliaComponent,
     FilterPipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,11 @@ import { LOCALE_ID } from '@angular/core';
     MatGridListModule,
     MatCardModule,
   ],
-  providers: [GlobalService, { provide: LOCALE_ID, useValue: 'es' }],
+  providers: [
+    GlobalService,
+    { provide: LOCALE_ID, useValue: 'es' },
+    CookieService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

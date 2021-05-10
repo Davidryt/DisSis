@@ -6,7 +6,23 @@
 </mat-toolbar>
 <div class="container" fxLayout="row" fxLayoutAlign="center">
   <div fxFlex="85" fxFlexFill fxLayout="column" fxLayoutAlign="center">
-    <div fxFlex class="titulo">Residentes</div>
+    <div class="titulo__container">
+      <div fxFlex class="titulo">Residentes</div>
+      <mat-form-field class="searchbar">
+        <mat-label>Buscar residente</mat-label>
+        <input matInput type="text" [(ngModel)]="searchText" />
+        <button
+          mat-button
+          *ngIf="searchText"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="searchText = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
 
     <div fxLayout="column" fxLayoutAlign="center space-between">
       <div fxLayout="row" fxLayoutAlign="space-around" class="fila">
@@ -95,3 +111,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>

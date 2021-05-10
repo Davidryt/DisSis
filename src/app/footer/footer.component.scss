@@ -1,0 +1,57 @@
+.footer {
+  height: 30vh;
+  width: calc(100% - 80px);
+  margin-top: 40px;
+
+  background-color: rgb(56, 175, 255);
+
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  color: white;
+
+  box-shadow: -5px 0 15px 3px rgba(88, 88, 88, 0.15) !important;
+
+  .mat-display-2 {
+    font-weight: 700;
+  }
+  .mat-display-1 {
+    position: relative;
+    line-height: 20px;
+    margin-bottom: 20px !important;
+    font: 700 24px/26px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: -0.005em;
+    &:after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 40%;
+      bottom: -12px;
+
+      height: 4px;
+      background-color: rgb(255, 255, 255);
+    }
+  }
+
+  .columns {
+    display: flex;
+    .column {
+      flex-grow: 1;
+      margin: 10px 30px;
+      gap: 5px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  h4 {
+    margin-top: 20px;
+    flex-grow: 1;
+  }
+}

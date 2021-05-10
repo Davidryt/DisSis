@@ -18,18 +18,9 @@ export class AdminComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private global: GlobalService
-  ) {
-    this.paciente = new paciente();
-  }
-  public id: any;
-
-  public paciente: paciente;
-
-  ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      this.paciente = new paciente();
-    });
-  }
+  ) {}
+  public searchText: string = '';
+  ngOnInit() {}
 
   public getPacientes = () => {
     return this.global.pacientes;
