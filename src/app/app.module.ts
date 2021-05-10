@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe'; // -> imported filter pipe
 import { CookieService } from 'ngx-cookie-service';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
 // GENERICOS DE MATERIAL:
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -76,6 +79,8 @@ import { FooterComponent } from './footer/footer.component';
     MatMenuModule,
     MatGridListModule,
     MatCardModule,
+
+    AngularFireModule,
   ],
   providers: [
     GlobalService,
