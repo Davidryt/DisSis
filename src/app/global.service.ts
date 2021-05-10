@@ -8,8 +8,24 @@ export class GlobalService {
   constructor() {}
 
   public pacientes: Array<paciente> = [
-    new paciente('David', 'Rico Pérez', [true, false, false], '10', '', true),
-    new paciente('Pepe', 'Timón Martínez', [true, false, false], '', '', true),
+    new paciente(
+      'David',
+      'Rico Pérez',
+      [true, false, false],
+      '105',
+      '',
+      true,
+      'ivan'
+    ),
+    new paciente(
+      'Pepe',
+      'Timón Martínez',
+      [true, false, false],
+      '',
+      '',
+      true,
+      'ivan'
+    ),
     new paciente('Lucía', 'Dorado Loto', [true, false, false], '', '', true),
     new paciente('Jaime', 'Castaño Pino', [true, false, false], '', '', true),
     new paciente(
@@ -17,7 +33,7 @@ export class GlobalService {
       'Pedreira Rato',
       [true, false, false],
       '',
-      '130',
+      '140',
       true
     ),
     new paciente(
@@ -29,6 +45,34 @@ export class GlobalService {
       true
     ),
     new paciente('Mónica', 'Martín Porto', [false, true, false], '', '', false),
+    new paciente('Luis', 'Cortés Lope', [true, false, false], '', '', true),
+    new paciente(
+      'Paola',
+      'Martínez Ruiz',
+      [true, false, false],
+      '95',
+      '125',
+      true
+    ),
+    new paciente('Remi', 'Gallego Casilda', [true, false, false], '', '', true),
+    new paciente(
+      'Pedro',
+      'Vega Castizo',
+      [true, false, false],
+      '',
+      '115',
+      true
+    ),
+    new paciente(
+      'Loretto',
+      'Caso Lotopero',
+      [true, false, false],
+      '',
+      '140',
+      true
+    ),
+    new paciente('Demisa', 'Corto Luiz', [true, false, false], '90', '', true),
+    new paciente('Javier', 'Costro Polo', [false, true, false], '', '', false),
   ];
 
   public borrar(id: number) {

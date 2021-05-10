@@ -16,7 +16,9 @@
   color: white;
 
   box-shadow: -5px 0 15px 3px rgba(88, 88, 88, 0.15) !important;
-
+  @media (max-width: 1024px) {
+    box-shadow: none !important;
+  }
   .mat-display-2 {
     font-weight: 700;
   }

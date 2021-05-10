@@ -32,7 +32,9 @@ export class FamiliaComponent implements OnInit {
   }
 
   public getPacientes = () => {
-    return this.global.pacientes;
+    return this.global.pacientes.filter(
+      (pac) => pac.$family === this.route.snapshot.params.id
+    );
   };
   public getPropiedades = () => {
     return ['Nombre', 'Apellidos', 'Desayuno', 'Comida', 'Cena'];

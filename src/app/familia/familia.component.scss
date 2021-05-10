@@ -17,6 +17,17 @@
     height: 8px;
     background-color: rgb(56, 175, 255);
   }
+  @media (max-width: 1024px) {
+    color: white;
+    &:after {
+      background-color: white;
+    }
+  }
+}
+.container {
+  @media (max-width: 1024px) {
+    background-color: rgb(56, 175, 255);
+  }
 }
 .paciente {
   &__propiedad {
@@ -24,13 +35,22 @@
   }
   &__nombre {
     width: 15%;
+    @media (max-width: 1024px) {
+      width: 50% !important;
+    }
   }
   &__comidas {
     width: 45%;
+    @media (max-width: 1024px) {
+      display: none !important;
+    }
   }
   &__extra {
     width: 40%;
     justify-content: space-evenly;
+    @media (max-width: 1024px) {
+      width: 50% !important;
+    }
     .action {
       display: flex;
       justify-content: center;
@@ -49,6 +69,9 @@
 
         height: 3px;
         background-color: rgb(56, 175, 255);
+        @media (max-width: 1024px) {
+          background-color: white;
+        }
 
         transition: all 0.2s ease-in-out;
       }
@@ -66,6 +89,9 @@
 
         height: 3px;
         background-color: rgb(56, 175, 255);
+        @media (max-width: 1024px) {
+          background-color: white;
+        }
       }
     }
   }
@@ -84,6 +110,10 @@
 
     color: rgb(38, 118, 172);
     font-family: "Roboto Condensed", sans-serif;
+
+    @media (max-width: 1024px) {
+      color: white;
+    }
   }
   &:not(:first-of-type) {
     margin-bottom: 10px;
@@ -91,6 +121,9 @@
     box-shadow: 5px 0 1px 0 rgb(56, 175, 255), -5px 0 1px 0 rgb(56, 175, 255) !important;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+  }
+  @media (max-width: 1024px) {
+    color: white;
   }
 }
 mat-toolbar {
@@ -103,8 +136,18 @@ mat-toolbar {
   background: rgb(56, 175, 255) !important;
   box-shadow: -5px 0 15px 3px rgba(88, 88, 88, 0.15) !important;
   z-index: 10;
+  > div {
+    @media (max-width: 1024px) {
+      flex-direction: column !important;
+    }
+  }
+  @media (max-width: 1024px) {
+    padding: 30px !important;
+  }
   *:not(mat-icon) {
-    max-height: 50px;
+    @media (min-width: 1024px) {
+      max-height: 50px;
+    }
     font-weight: 700;
   }
   .mat-display-1,
@@ -128,9 +171,24 @@ mat-toolbar {
     height: 50px;
     margin-left: 30px;
     margin-right: 30px;
+    @media (max-width: 1024px) {
+      width: 50px !important;
+      background-color: white;
+      height: 2px !important;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
   }
 }
 
+.error {
+  padding: 30px;
+  color: rgb(56, 175, 255);
+  font-size: 20px;
+  @media (max-width: 1024px) {
+    color: white;
+  }
+}
 .white-icon {
   color: white !important;
   cursor: pointer;
@@ -144,8 +202,14 @@ mat-toolbar {
   color: rgb(56, 175, 255) !important;
   margin-right: 10px !important;
   cursor: pointer;
+  @media (max-width: 1024px) {
+    color: white !important;
+  }
 }
 /* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
 .blue-icon svg {
   fill: rgb(56, 175, 255);
+  @media (max-width: 1024px) {
+    fill: white !important;
+  }
 }

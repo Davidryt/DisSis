@@ -1,8 +1,13 @@
 <mat-toolbar>
   <!-- <img src="assets/imagenes/logo.png" /> -->
-  <span class="mat-display-2">Project Alpha</span>
-  <span class="header--separator"></span>
-  <span class="mat-display-1">Admin</span>
+  <div fxLayout="row" fxLayoutAlign="center" fxFlex="1 0 1px">
+    <span class="mat-display-2">Project Alpha</span>
+    <span class="header--separator"></span>
+    <span class="mat-display-1">Admin</span>
+  </div>
+  <a href="/access">
+    <mat-icon class="white-icon">logout</mat-icon>
+  </a>
 </mat-toolbar>
 <div class="container" fxLayout="row" fxLayoutAlign="center">
   <div fxFlex="85" fxFlexFill fxLayout="column" fxLayoutAlign="center">
@@ -107,6 +112,15 @@
             />
           </div>
         </div>
+      </div>
+      <div
+        *ngIf="
+          !(getPacientes() | appFilter: searchText) ||
+          (getPacientes() | appFilter: searchText).length === 0
+        "
+        class="error"
+      >
+        No hay residentes que se ajusten a los parametros indicados
       </div>
     </div>
   </div>

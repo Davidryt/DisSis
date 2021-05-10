@@ -13,23 +13,29 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
+          <div class="error" *ngIf="errors.rol">{{ errors.rol }}</div>
 
-          <mat-form-field
-            ><input
+          <mat-form-field>
+            <input
               matInput
               type="text"
               placeholder="Nombre de usuario"
               [(ngModel)]="user.name"
               name="nombre"
-          /></mat-form-field>
-          <mat-form-field
-            ><input
+            />
+          </mat-form-field>
+          <div class="error" *ngIf="errors.name">{{ errors.name }}</div>
+
+          <mat-form-field>
+            <input
               matInput
-              type="text"
+              type="password"
               placeholder="Contraseña"
               [(ngModel)]="user.pass"
               name="nombre"
-          /></mat-form-field>
+            />
+          </mat-form-field>
+          <div class="error" *ngIf="errors.pass">{{ errors.password }}</div>
         </mat-card-content>
 
         <mat-card-actions fxLayout="row" style="margin-top: 50px">
@@ -46,69 +52,81 @@
         <mat-card-content fxLayout="column" fxLayoutAlign="center">
           <mat-form-field>
             <mat-label>Residencia</mat-label>
-            <mat-select [(ngModel)]="user.rol" name="rol">
+            <mat-select [(ngModel)]="newUser.resi" name="resi">
               <mat-option
-                *ngFor="let rol of getTipos(); let i = index"
-                [value]="rol"
+                *ngFor="let resi of getResidencias(); let i = index"
+                [value]="resi"
               >
-                {{ rol }}
+                {{ resi }}
               </mat-option>
             </mat-select>
           </mat-form-field>
+          <div class="error" *ngIf="errors.resi">{{ errors.resi }}</div>
+
           <mat-form-field
             ><input
               matInput
               type="text"
               placeholder="Nombre de usuario"
-              [(ngModel)]="user.$nombre"
-              name="nombre"
+              [(ngModel)]="newUser.user"
+              name="user"
           /></mat-form-field>
+          <div class="error" *ngIf="errors.user">{{ errors.user }}</div>
+
           <mat-form-field
             ><input
               matInput
               type="password"
               placeholder="Contraseña"
-              [(ngModel)]="user.$apellido"
+              [(ngModel)]="newUser.password"
               name="nombre"
           /></mat-form-field>
+          <div class="error" *ngIf="errors.password">{{ errors.password }}</div>
+
           <mat-form-field
             ><input
               matInput
               type="text"
               placeholder="Nombre y apellidos"
-              [(ngModel)]="user.$direc"
+              [(ngModel)]="newUser.fullName"
               name="nombre"
           /></mat-form-field>
+          <div class="error" *ngIf="errors.fullName">{{ errors.fullName }}</div>
+
           <mat-form-field
             ><input
               matInput
               type="text"
               placeholder="Dirección"
-              [(ngModel)]="user.$direc"
+              [(ngModel)]="newUser.address"
               name="nombre"
           /></mat-form-field>
+          <div class="error" *ngIf="errors.address">{{ errors.address }}</div>
+
           <mat-form-field
             ><input
               matInput
               type="number"
               placeholder="Teléfono"
-              [(ngModel)]="user.$telf"
+              [(ngModel)]="newUser.phone"
               name="telefono"
           /></mat-form-field>
+          <div class="error" *ngIf="errors.phone">{{ errors.phone }}</div>
 
           <mat-form-field
             ><input
               matInput
               type="text"
               placeholder="ID de familiar"
-              [(ngModel)]="user.$emp"
+              [(ngModel)]="newUser.id"
               name="emp"
           /></mat-form-field>
+          <div class="error" *ngIf="errors.id">{{ errors.id }}</div>
         </mat-card-content>
 
         <mat-card-actions fxLayout="row" style="margin-top: 50px">
           <div fxFlex fxLayoutAlign="center">
-            <button (click)="cancelar()" mat-flat-button color="accent">
+            <button (click)="registrar()" mat-flat-button color="accent">
               Crear cuenta
             </button>
           </div>

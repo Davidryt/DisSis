@@ -7,7 +7,7 @@ import { FamiliaComponent } from './familia/familia.component';
 
 const routes: Routes = [
   { path: 'panel', component: PanelComponent },
-  { path: '', redirectTo: '/panel', pathMatch: 'full' },
+  { path: '', redirectTo: '/access', pathMatch: 'full' },
   { path: 'access', component: AccessComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'family/:id', component: FamiliaComponent },

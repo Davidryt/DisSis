@@ -5,6 +5,7 @@ export class paciente {
   private comidas: boolean[];
   private oxygen: string;
   private pressure: string;
+  private family: string;
   private observacion: boolean;
 
   constructor(
@@ -13,7 +14,8 @@ export class paciente {
     $comidas?: boolean[],
     $oxygen?: string,
     $pressure?: string,
-    $observacion?: boolean
+    $observacion?: boolean,
+    $family?: string
   ) {
     this.nombre = $nombre || '';
     this.apellido = $apellido || '';
@@ -21,6 +23,7 @@ export class paciente {
     this.oxygen = $oxygen || '';
     this.pressure = $pressure || '';
     this.observacion = $observacion || false;
+    this.family = $family || '';
   }
 
   /**
@@ -41,6 +44,9 @@ export class paciente {
   }
   public get $pressure(): string {
     return this.pressure;
+  }
+  public get $family(): string {
+    return this.family;
   }
   public get $observacion(): boolean {
     return this.observacion;
